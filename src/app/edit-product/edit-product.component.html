@@ -1,16 +1,17 @@
-<!-- <div class="container">
+<div class="container">
   <h2>Edit Product</h2>
-  <form>
+  <form [formGroup]="productForm">
     <div>
       <span>
         Name
-        <input type="text" name="productName" f>
+        <input type="text" name="productName" formControlName="productName" #productName
+          [(ngModel)]="product.productName">
       </span>
     </div>
     <br>
     <div>
       Category
-      <select name="category">
+      <select name="category" formControlName="category" #category [(ngModel)]="product.category">
         <option value="cake">Cake</option>
         <option value="sandwiche">Sandwiche</option>
         <option value="coffee">Coffee</option>
@@ -19,10 +20,11 @@
     <br>
     <div>
       Price
-      <input type="number" name="price">
+      <input type="number" name="price" formControlName="price" #price [(ngModel)]="product.price">
     </div>
 
     <br>
-    <button class="btn btn-primary">Update</button>
+    <button class="btn btn-primary"
+      (click)="clickUpdate(productName.value, category.value, price.value)">Update</button>
   </form>
-</div> -->
+</div>

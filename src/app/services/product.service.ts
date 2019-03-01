@@ -22,4 +22,17 @@ export class ProductService {
     }
     this.http.post(`${this.uri}/add`, data).subscribe(res => alert('Save'));
   }
+
+  loadDetailProduct(id) {
+    return this.http.get(`${this.uri}/${id}`)
+  }
+
+  updateProduct(id, productName, category, price) {
+    const data = {
+      productName: productName,
+      category: category,
+      price: price
+    }
+    this.http.post(`${this.uri}/update/${id}`, data).subscribe(res => alert('Update'));
+  }
 }
