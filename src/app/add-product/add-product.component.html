@@ -1,14 +1,14 @@
 <div class="container">
   <h2>Add Product</h2>
-  <form>
+  <form [formGroup]="productForm" novalidate>
     <div>
       Name
-      <input type="text" name="productName">
+      <input type="text" name="productName" #productName>
     </div>
     <br>
     <div>
       Category
-      <select name="category">
+      <select name="category" #category>
         <option value="cake">Cake</option>
         <option value="sandwiche">Sandwiche</option>
         <option value="coffee">Coffee</option>
@@ -17,10 +17,10 @@
     <br>
     <div>
       Price
-      <input type="number" name="price">
+      <input type="number" name="price" #price>
     </div>
 
     <br>
-    <button class="btn btn-primary">Save</button>
+    <button class="btn btn-primary" (click)="clickSave(productName.value, category.value, price.value)">Save</button>
   </form>
 </div>

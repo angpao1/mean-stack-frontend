@@ -13,4 +13,13 @@ export class ProductService {
   getProducts() {
     return this.http.get(`${this.uri}/`)
   }
+
+  saveProduct(productName, category, price) {
+    const data = {
+      productName: productName,
+      category: category,
+      price: price
+    }
+    this.http.post(`${this.uri}/add`, data).subscribe(res => alert('Save'));
+  }
 }
