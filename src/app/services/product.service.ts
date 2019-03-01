@@ -35,4 +35,8 @@ export class ProductService {
     }
     this.http.post(`${this.uri}/update/${id}`, data).subscribe(res => alert('Update'));
   }
+
+  deleteProduct(id) {
+    return this.http.post(`${this.uri}/delete/${id}`, '');
+  }
 }
