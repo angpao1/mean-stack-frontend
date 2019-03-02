@@ -8,7 +8,7 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  uri = 'http://localhost:4000/products'
+  uri = 'http://34.73.97.253:4000/products'
 
   getProducts() {
     return this.http.get(`${this.uri}/`)
